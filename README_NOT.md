@@ -46,6 +46,6 @@ Let's create an angular app!
 
 ## 20230323
 위 방법대로 하면 재부팅하면 또 다시 소스트리에 publickey 에러가 난다. 
-
+리부팅 후
 
 
