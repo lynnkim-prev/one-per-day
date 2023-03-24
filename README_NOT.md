@@ -61,3 +61,7 @@ https://stackoverflow.com/a/69764024
   * AddKeysToAgent yes
 
 
+스타일 셋업:
+▶ ng add @angular/material
+▶ npm install bootstrap
+
