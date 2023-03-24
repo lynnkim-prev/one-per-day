@@ -50,7 +50,7 @@ Let's create an angular app!
 호스트가: github.com, 유저: git으로 되어있어야 한다. 
 https://stackoverflow.com/a/69764024
 
-터미널: 
+#### 터미널: 
 * ▶ vi ./.ssh/config
   * Host github.com
   * HostName github.com
@@ -60,8 +60,21 @@ https://stackoverflow.com/a/69764024
   * UseKeychain yes
   * AddKeysToAgent yes
 
+#### 스타일 셋업:
+* ▶ ng add @angular/material 
+* ▶ npm install bootstrap
+* `src/styles.scss`
+  * @import "~bootstrap/dist/css/bootstrap.css";
 
-스타일 셋업:
-▶ ng add @angular/material
-▶ npm install bootstrap
+#### NgRx 셋업: https://ngrx.io/guide/store/install
+* ▶ ng add @ngrx/store@latest
+* ▶ ng add @ngrx/store@latest --no-minimal
+* ▶ ng add @ngrx/effects@latest
+* ▶ ng add @ngrx/router-store@latest
+* ▶ ng add @ngrx/entity@latest
+* ▶ ng add @ngrx/component-store@latest // 이거 기존 프로젝트에서도 안쓰는건데 일단 궁금해서 설치해봄~ store랑 뭐가 다를까?
+* ▶ ng add @ngrx/store-devtools
+* ▶ npm install ngrx-store-localstorage --save
 
+배고파서 오늘은 소코마데다
+내일은 치맥이다 
