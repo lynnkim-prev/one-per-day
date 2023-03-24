@@ -44,3 +44,20 @@ Let's create an angular app!
    * ▶ cd ~/.ssh
    * ▶ vi config 
 
+## 20230323
+~~위 방법대로 하면 재부팅하면 또 다시 소스트리에 publickey 에러가 난다.~~
+찾았다. 
+호스트가: github.com, 유저: git으로 되어있어야 한다. 
+https://stackoverflow.com/a/69764024
+
+터미널: 
+* ▶ vi ./.ssh/config
+  * Host github.com
+  * HostName github.com
+  * User git
+  * PreferredAuthentications publickey
+  * IdentityFile /Users/lynnkim/.ssh/lynnkim-prev-GitHub
+  * UseKeychain yes
+  * AddKeysToAgent yes
+
+
