@@ -79,12 +79,14 @@ https://stackoverflow.com/a/69764024
 배고파서 오늘은 소코마데다
 내일은 치맥이다 
 
-## 20230325
+## 20230325~20230326
 https://random-data-api.com/api/coffee/random_coffee?size=50
 
-@ngrx/schematics 설치 (커멘드로 스토어 만들기위해 설치함)
-▶ ng add @ngrx/schematics@latest
+~~@ngrx/schematics 설치 (커멘드로 스토어 만들기위해 설치함)
+▶ ng add @ngrx/schematics@latest~~
+스키마 ngrx.io 도큐먼트 + 프로젝트 따르는게 더 깔끔.
 
+coffee-list-cont 보일러 플레이트 만듦. 
 
 
 
