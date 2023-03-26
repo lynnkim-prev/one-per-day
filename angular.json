@@ -129,5 +129,10 @@
       }
     }
   },
-  "defaultProject": "one-per-day"
+  "defaultProject": "one-per-day",
+  "cli": {
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
+  }
 }
