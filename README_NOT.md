@@ -78,3 +78,19 @@ https://stackoverflow.com/a/69764024
 
 배고파서 오늘은 소코마데다
 내일은 치맥이다 
+
+## 20230325
+https://random-data-api.com/api/coffee/random_coffee?size=50
+
+
+
+
+
+
+
+
+
+
+
+
+
