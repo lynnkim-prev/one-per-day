@@ -1,2 +1,40 @@
-<p>coffee-list-pres works!</p>
-<p>{{coffees}}</p>
+<div class="coffee-list">
+  <h1 class="text-center my-5">Random Coffee List &#x2615;</h1>
+  <table class="coffee-table w-100 mb-3" style="--number-of-coffee-keys: {{ numberOfCoffeeKeys }}">
+    <thead>
+    <tr class="text-center py-4 bg-dark bg-opacity-25">
+      <th>id</th>
+      <th>uid</th>
+      <th>blend_name</th>
+      <th>origin</th>
+      <th>variety</th>
+      <th>notes</th>
+      <th>intensifier</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let coffee of coffees | paginate: {
+      itemsPerPage: tableSize,
+      currentPage: page,
+      totalItems: count
+      }; let i = index"
+    >
+      <td class="coffee-id" data-label="id">{{ coffee.id }}</td>
+      <td data-label="uid">{{ coffee.uid }}</td>
+      <td data-label="blend_name">{{ coffee.blend_name }}</td>
+      <td data-label="origin">{{ coffee.origin }}</td>
+      <td data-label="variety">{{ coffee.variety }}</td>
+      <td data-label="notes">{{ coffee.notes }}</td>
+      <td data-label="intensifier">{{ coffee.intensifier }}</td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+  </div>
+</div>
