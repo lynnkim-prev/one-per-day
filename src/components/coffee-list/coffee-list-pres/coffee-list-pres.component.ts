@@ -22,7 +22,7 @@ export class CoffeeListPresComponent implements OnChanges {
 
   /* Detect input changes */
   public ngOnChanges(changes: SimpleChanges) {
-    if (changes.coffees) {
+    if (changes.coffees.currentValue.length) {
       this.numberOfCoffeeKeys = Object.keys(this.coffees[0]).length;
     }
   }
