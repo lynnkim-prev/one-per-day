@@ -1,0 +1,18 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  div {
+    width: 100px;
+  }
+
+  button {
+    width: fit-content;
+  }
+
+  .invalid {
+    background-color: #ffdddd;
+  }
+
+}
