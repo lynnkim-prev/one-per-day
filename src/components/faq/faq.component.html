@@ -1,0 +1,15 @@
+<!--https://frontendeval.com/questions/faq-component-->
+
+<div class="q-a-button-wrapper">
+
+  <ng-container *ngFor="let questionAndAnswer of this.questionAndAnswers; let i = index">
+    <button class="d-flex w-50" (click)="handleClick(i)">
+      <mat-icon [class.q-a-icon-expand-less]="selectedIndex === i">expand_more</mat-icon>
+      <div class="d-flex flex-column q-a-text-wrapper">
+        <span>{{questionAndAnswer.question}}</span>
+        <span [class.d-none]="selectedIndex !== i">{{questionAndAnswer.answer}}</span>
+      </div>
+    </button>
+  </ng-container>
+
+</div>

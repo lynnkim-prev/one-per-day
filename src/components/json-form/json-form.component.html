@@ -1,0 +1,11 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <mat-action-list *ngFor="let control of jsonFormData.controls">
+    <mat-label>{{ control.label }}</mat-label>
+    <input
+      [type]="control.type"
+      [formControlName]="control.name"
+      [value]="control.value"
+    >
+
+  </mat-action-list>
+</form>

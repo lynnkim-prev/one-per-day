@@ -5,26 +5,44 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CoffeeListContComponentModule } from "../components/coffee-list/coffee-list-cont/coffee-list-cont.component.module";
+import { HttpClientModule } from "@angular/common/http";
+import { JsonFormComponent } from '../components/json-form/json-form.component';
+import { ReactiveFormsModule } from "@angular/forms";
+import { MatListModule } from "@angular/material/list";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { PokeFormComponent } from "../components/poke-form/poke-form.component";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
+import { FaqComponentModule } from "../components/faq/faq.component.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JsonFormComponent,
+    PokeFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     StoreModule.forRoot({}, {}),
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    }),
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    CoffeeListContComponentModule,
+    ReactiveFormsModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    FaqComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

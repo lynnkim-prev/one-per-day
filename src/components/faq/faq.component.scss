@@ -1,0 +1,10 @@
+.q-a {
+
+  &-icon-expand-less {
+    transform: rotateX(180deg);
+  }
+
+  &-text-wrapper span {
+    text-align: left;
+  }
+}
