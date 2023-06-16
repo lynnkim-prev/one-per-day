@@ -1,0 +1,27 @@
+<form *ngIf="pokeForm" [formGroup]="pokeForm">
+  <div>
+    <label>Name</label>
+    <input
+      formControlName="name"
+      [class.invalid]="isInvalid('name')"
+    >
+    <span class="error-message" *ngIf="isInvalid('name')">has error!</span>
+  </div>
+  <div>
+    <label>Country</label>
+    <input formControlName="country">
+  </div>
+  <div>
+    <label>Favourite</label>
+    <input formControlName="favourite">
+  </div>
+  <div>
+    <label>Pokemon Type</label>
+    <mat-select formControlName="pokemonType">
+      <mat-option *ngFor="let pokemonType of pokemonTypes">
+        <mat-option [value]="pokemonType.id">{{pokemonType.type.charAt(0).toUpperCase() + pokemonType.type.slice(1)}}</mat-option>
+      </mat-option>
+    </mat-select>
+  </div>
+  <button mat-button class="mat-button" (click)="submitPokeForm()">Submit</button>
+</form>
