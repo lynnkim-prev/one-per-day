@@ -9,6 +9,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CoffeeListContComponentModule } from "../components/coffee-list/coffee-list-cont/coffee-list-cont.component.module";
+import { CoffeeEffects } from "../store/coffee/coffee.effects";
+import { coffeeReducer } from "../store/coffee/coffee.reducer";
 import { HttpClientModule } from "@angular/common/http";
 import { JsonFormComponent } from '../components/json-form/json-form.component';
 import { ReactiveFormsModule } from "@angular/forms";

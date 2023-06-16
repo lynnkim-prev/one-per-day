@@ -1,0 +1,75 @@
+.coffee-list {
+  $numberOfCoffeeKeys: var(--number-of-coffee-keys);
+
+  .coffee-table {
+    tr {
+      display: grid;
+      grid-template-columns: repeat($numberOfCoffeeKeys, calc(100% / $numberOfCoffeeKeys));
+
+      &:first-of-type th {
+        text-transform: capitalize;
+      }
+
+      td, th {
+        padding: 0.5rem 0;
+
+        &.coffee-id {
+          text-align: center;
+        }
+      }
+
+      &:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+
+      tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+
+
+        td {
+          border-bottom: 1px solid #ddd;
+          display: block;
+          font-size: .8em;
+          text-align: right;
+
+          &.coffee-id {
+            text-align: right;
+          }
+        }
+
+        td::before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        td:last-child {
+          border-bottom: 0;
+        }
+      }
+
+    }
+  }
+
+
+}
