@@ -1,0 +1,23 @@
+<!--https://frontendeval.com/questions/mortgage-calculator-->
+
+<form [formGroup]="mortgageForm" (submit)="handleSubmit()">
+  <div *ngFor="let formData of mortgageFormData" class="d-flex justify-content-between w-50">
+
+    <label [for]="formData.name">{{formData.label}}</label>
+
+    <div>
+      <input
+        [id]="formData.name"
+        [type]="formData.type"
+        [formControlName]="formData.name"
+      >
+      <span>{{formData.suffix}}</span>
+    </div>
+
+  </div>
+
+  <button type="submit">Calculate!!</button>
+
+  <p *ngIf="result">Your monthly mortgage payment will be ${{result | number}}</p>
+
+</form>
