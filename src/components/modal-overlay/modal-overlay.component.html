@@ -1,0 +1,32 @@
+<!--https://frontendeval.com/questions/modal-overlay-->
+
+<div class="modal-overlay h-100 d-flex align-items-center justify-content-center">
+  <p *ngIf="isAccepted">Offer accepted</p>
+  <button mat-flat-button color="primary" *ngIf="!isAccepted" (click)="openDialog()">Show offer</button>
+</div>
+
+
+<ng-template #offerTemplateRef let-data>
+  <mat-dialog-content>
+    {{data}}
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-flat-button (click)="onAcceptOfferClick()">Accept offer</button>
+  </mat-dialog-actions>
+</ng-template>
+
+
+
+<!--
+ html:
+ button: on click, openDialog()
+ template: templateRef to be added inside MatDialog
+
+ ts:
+ inject MatDialog service to constructor. - public matDialog: MatDialog
+ declare variable @ViewChild and designate the templateRef as TemplateRef<any>
+ declare variable dialogRef
+ on click of openDialog(), dialogRef = this.matDialog.open(templateRef, {config})
+ on click of onAcceptOfferClick(), this.dialogRef.close()
+ -->

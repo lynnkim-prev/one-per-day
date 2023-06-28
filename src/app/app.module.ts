@@ -19,6 +19,8 @@ import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
 import { FaqComponentModule } from "../components/faq/faq.component.module";
 import { MortgageCalculatorComponentModule } from "../components/mortgage-calculator/mortgage-calculator.component.module";
+import { ModalOverlayComponentModule } from "../components/modal-overlay/modal-overlay.component.module";
+import { CountdownTimerComponentModule } from "../components/countdown-timer/countdown-timer.component.module";
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { MortgageCalculatorComponentModule } from "../components/mortgage-calcul
     MatInputModule,
     MatSelectModule,
     FaqComponentModule,
-    MortgageCalculatorComponentModule
+    MortgageCalculatorComponentModule,
+    ModalOverlayComponentModule,
+    CountdownTimerComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

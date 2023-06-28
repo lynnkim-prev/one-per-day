@@ -1,0 +1,28 @@
+<!--https://frontendeval.com/questions/countdown-timer-->
+<div class="countdown-timer-wrapper">
+  <form [formGroup]="countdownForm">
+    <h1>Countdown Timer</h1>
+    <div class="control-wrapper">
+      <ng-container *ngFor="let time of countdownTimes">
+<!--          [value]="time.value"-->
+        <input
+          [formControlName]="time.label"
+          [type]="time.type"
+          [placeholder]="time.label"
+        >
+      </ng-container>
+      <p class="p-2">
+        HH {{hour}}: MM {{minute}}: SS {{second}}
+      </p>
+    </div>
+
+
+    <button (click)="onStart()">START</button>
+    <button (click)="onPause()">PAUSE</button>
+    <button (click)="onReset()">RESET</button>
+  </form>
+
+
+</div>
+
+
