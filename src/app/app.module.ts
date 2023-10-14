@@ -21,6 +21,7 @@ import { FaqComponentModule } from "../components/faq/faq.component.module";
 import { MortgageCalculatorComponentModule } from "../components/mortgage-calculator/mortgage-calculator.component.module";
 import { ModalOverlayComponentModule } from "../components/modal-overlay/modal-overlay.component.module";
 import { CountdownTimerComponentModule } from "../components/countdown-timer/countdown-timer.component.module";
+import { AlgorithmComponentModule } from "../components/algorithm/algorithm.component.module";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { CountdownTimerComponentModule } from "../components/countdown-timer/cou
     FaqComponentModule,
     MortgageCalculatorComponentModule,
     ModalOverlayComponentModule,
-    CountdownTimerComponentModule
+    CountdownTimerComponentModule,
+    AlgorithmComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
