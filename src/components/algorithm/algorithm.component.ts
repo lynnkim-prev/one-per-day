@@ -1,16 +1,31 @@
 import {
-  Component
+  Component,
+  OnDestroy,
+  OnInit
 } from '@angular/core';
+import { DataService } from "../../services/data.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: 'app-algorithm',
   templateUrl: './algorithm.component.html',
   styleUrls: ['./algorithm.component.scss']
 })
-export class AlgorithmComponent {
+export class AlgorithmComponent implements OnInit, OnDestroy {
 
-  constructor() {
+  /**
+   * List of subscriptions to unsubscribe on destroy
+   */
+  protected subscriptions: Subscription[] = [];
+
+  constructor(
+    private dataService: DataService
+  ) {
+  }
+
+  public ngOnInit() {
     this.algorithmPractice01()
+    this.algorithmPractice02()
   }
 
   public algorithmPractice01(): void {
@@ -35,4 +50,37 @@ export class AlgorithmComponent {
     console.log(result);
   }
 
+  public algorithmPractice02(): void {
+    this.subscriptions.push(
+      this.dataService.getData('assets/json/dogs.json').subscribe((data) => {
+        const dogs = data;
+        // let durabilityOfRocks = [1, 2, 1, 4];
+        let durabilityOfRocks = [5, 3, 4, 1, 3, 8, 3];
+
+        let results = [];
+
+        for (let dog of dogs) {
+          let successFlag = true;
+          let jumpedIndex = 0;
+          while (jumpedIndex < durabilityOfRocks.length - 1) {
+            jumpedIndex += parseInt(dog.jump);
+            durabilityOfRocks[jumpedIndex - 1] -= parseInt(dog.weight)
+
+            if (durabilityOfRocks[jumpedIndex - 1] < 0) {
+              successFlag = false;
+              break;
+            }
+          }
+          if (successFlag) {
+            results.push(dog.name)
+          }
+        }
+        console.log('results', results)
+      }))
+  }
+
+  public ngOnDestroy() {
+    // clean the subscriptions
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
+  }
 }

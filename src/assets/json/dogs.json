@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Ruby-dog",
+    "jump": "3",
+    "weight": "4"
+  },
+  {
+    "name": "Peach-dog",
+    "jump": "3",
+    "weight": "3"
+  },
+  {
+    "name": "C-dog",
+    "jump": "2",
+    "weight": "1"
+  },
+  {
+    "name": "Cobalt-dog",
+    "jump": "1",
+    "weight": "1"
+  }
+]
