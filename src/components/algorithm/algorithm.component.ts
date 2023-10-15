@@ -62,7 +62,7 @@ export class AlgorithmComponent implements OnInit, OnDestroy {
         for (let dog of dogs) {
           let successFlag = true;
           let jumpedIndex = 0;
-          while (jumpedIndex < durabilityOfRocks.length - 1) {
+          while (jumpedIndex < durabilityOfRocks.length) {
             jumpedIndex += parseInt(dog.jump);
             durabilityOfRocks[jumpedIndex - 1] -= parseInt(dog.weight)
 
